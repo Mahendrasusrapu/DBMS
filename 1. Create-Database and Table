@@ -1,0 +1,113 @@
+
+mysql> show databases;   // show how many databases are present in the database
++--------------------+
+| Database           |
++--------------------+
+| dbms               |
+| information_schema |
+| lab1               |
+| lab10              |
+| lab2               |
+| lab3               |
+| lab4               |
+| lab5               |
+| lab6               |
+| lab7               |
+| lab8               |
+| lab9               |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+15 rows in set (0.17 sec)
+
+mysql> create database Mahendra;  // add database or create the database
+Query OK, 1 row affected (0.17 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| dbms               |
+| information_schema |
+| lab1               |
+| lab10              |
+| lab2               |
+| lab3               |
+| lab4               |
+| lab5               |
+| lab6               |
+| lab7               |
+| lab8               |
+| lab9               |
+| mahendra           |   // database created and add into the databasess
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+16 rows in set (0.00 sec)
+
+mysql> use mahendra;
+Database changed
+mysql> show tables;  // show how mahy table is cantain
+Empty set (0.20 sec)
+
+
+mysql> create table ravindra (rollno int,FirstName varchar(255),LastName varchar(255),PhoneNumber int);  /// create table with the tabel name and col names along with properties
+Query OK, 0 rows affected (1.93 sec)  
+
+
+
+mysql> show tables;
++--------------------+
+| Tables_in_mahendra |
++--------------------+
+| ravindra           |
++--------------------+
+1 row in set (0.00 sec)
+
+mysql> select * from ravindra;
+Empty set (0.02 sec)
+
+mysql> insert into ravindra values (1,"Mahendra","sharma",9);  // inster the value by using DML(Data manupliating language INSERT INTO )
+Query OK, 1 row affected (0.26 sec)
+
+mysql> select * from ravindra;
+
+
++--------+-----------+----------+-------------+
+| rollno | FirstName | LastName | PhoneNumber |
++--------+-----------+----------+-------------+
+|      1 | Mahendra  | sharma   |           9 |
++--------+-----------+----------+-------------+
+1 row in set (0.04 sec)
+
+mysql> insert into ravindra values(2,"ravindra","sharma",8);
+Query OK, 1 row affected (0.13 sec)
+
+mysql> insert into ravindra values (3,"prasad","Sharma",7);
+Query OK, 1 row affected (0.07 sec)
+
+mysql> select * from ravindra;
++--------+-----------+----------+-------------+
+| rollno | FirstName | LastName | PhoneNumber |
++--------+-----------+----------+-------------+
+|      1 | Mahendra  | sharma   |           9 |
+|      2 | ravindra  | sharma   |           8 |
+|      3 | prasad    | Sharma   |           7 |
++--------+-----------+----------+-------------+
+3 rows in set (0.00 sec)
+
+mysql> update ravindra set PhoneNumber=0 where rollno=3;   // update the value by using DML -- BY UPDATE TABLE_NAME SET updation where condition;
+Query OK, 1 row affected (0.24 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from ravindra;
++--------+-----------+----------+-------------+
+| rollno | FirstName | LastName | PhoneNumber |
++--------+-----------+----------+-------------+
+|      1 | Mahendra  | sharma   |           9 |
+|      2 | ravindra  | sharma   |           8 |
+|      3 | prasad    | Sharma   |           0 |
++--------+-----------+----------+-------------+
+3 rows in set (0.05 sec)
